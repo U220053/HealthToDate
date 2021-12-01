@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthToDate-Heart</title>
+    <script src="https://kit.fontawesome.com/04ec824536.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">HealthToDate</div>
+        <label for="" class="menu-btn" id="menu">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul id="chng">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Cancer">Cancer</a></li>
+            <li><a href="/Heart">Heart</a></li>
+            <li><a href="/Diabetes">Diabetes</a></li>
+            <!-- <li><a href="#"></a></li> -->
+        </ul>
+    </nav>
+    <div class="body">
+        <div class="container">
+            <div class="title">
+                Heart Prediction
+            </div>
+            <form action="{{ url_for('predict_heart') }}" method="post">
+                <div class="user-details">
+                    <div class="input_box">
+                        <span class="details">Chest Pain Type</span>
+                        <select class="form-control" id="cp" name="cp" required="required"
+                            placeholder="Chest Pain Type">
+                            <option value="1">Typical Angina</option>
+                            <option value="2">Atypical Angina</option>
+                            <option value="3">Non-Anginal Pain</option>
+                            <option value="4">Asymptomatic</option>
+                        </select>
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Resting Blood Pressure</span>
+                        <input type="number" id="trestbps" name="trestbps" required="required"
+                            placeholder="Resting Blood Pressure">
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Serum Cholestoral</span>
+                        <input type="number" step="any" id="chol" name="chol" required="required"
+                            placeholder="Serum Cholestoral">
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Fasting Blood Sugar</span>
+                        <select class="form-control" id="fbs" name="fbs" required="required"
+                            placeholder="Fasting Blood Sugar">
+                            <option value="0">Fasting Blood Sugar < 120 mg/dl</option>
+                            <option value="1">Fasting Blood Sugar > 120 mg/dl</option>
+                        </select>
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Resting Electro-cardiographic Result</span>
+                        <select class="form-control" type="number" id="restecg" name="restecg" required="required"
+                            placeholder="Resting Electro-cardiographic Result">
+                            <option value="0">Normal</option>
+                            <option value="1">having ST-T wave abnormality</option>
+                            <option value="2">showing probable or definite left ventricular hypertrophy</option>
+                        </select>
+                    </div>
+
+                    <div class="input_box">
+                        <span class="details">Maximum Heart Rate Achieved</span>
+                        <input class="form-control" id="thalach" name="thalach" required="required">
+                    </div>
+
+                    <div class="input_box">
+                        <span class="details">Exercise Induced Angina</span>
+                        <select class="form-control" id="exang" name="exang" required="required">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn" id="btn">Predict</button>
+                    <button type="submit" class="btn2" id="btn2"><i class="fas fa-trash"></i></button>
+                </div>
+
+            </form>
+            <h1 id="result">{{ prediction_text }}</h1>
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../static/js/app.js"></script>
+    <script type="text/javascript" src="../static/js/ham.js"></script>
+</body>
+
+</html>

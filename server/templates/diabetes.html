@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthToDate-Diabetes</title>
+    <script src="https://kit.fontawesome.com/04ec824536.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">HealthToDate</div>
+        <label for="" class="menu-btn" id="menu">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul id="chng">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Cancer">Cancer</a></li>
+            <li><a href="/Heart">Heart</a></li>
+            <li><a href="/Diabetes">Diabetes</a></li>
+            <!-- <li><a href="#"></a></li> -->
+        </ul>
+    </nav>
+    <div class="body">
+        <div class="container">
+            <div class="title">
+                Diabetes Prediction
+            </div>
+            <form action="{{ url_for('predict_diabetes') }}" method="post">
+                <div class="user-details">
+                    <div class="input_box">
+                        <span class="details">Pregnancies</span>
+                        <input id="can_input" type="number" name="Pregnancies" placeholder="Pregnancies"
+                            required="required" />
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Glucose</span>
+                        <input id="can_input" type="text" name="Glucose" placeholder="Glucose"
+                            required="required" />
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">BloodPressure</span>
+                        <input id="can_input" type="text" name="BloodPressure" placeholder="BloodPressure"
+                            required="required" />
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Insulin</span>
+                        <input id="can_input" type="text" name="Insulin" placeholder="Insulin"
+                            required="required" />
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">BMI</span>
+                        <input id="can_input" type="text" name="BMI" placeholder="BMI"
+                            required="required" />
+
+                    </div>
+                    <div class="input_box">
+                        <span class="details">DiabetesPedigreeFunction</span>
+                        <input id="can_input" type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction"
+                            required="required" />
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Age</span>
+                        <input id="can_input" type="text" name="Age" placeholder="Age"
+                            required="required" />
+                    </div>
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn" id="btn">Predict</button>
+                    <button type="submit" class="btn2" id="btn2"><i class="fas fa-trash"></i></button>
+                </div>
+
+            </form>
+            <h1 id="result">{{ prediction_text }}</h1>
+
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../static/js/app.js"></script>
+    <script type="text/javascript" src="../static/js/ham.js"></script>
+</body>
+
+</html>

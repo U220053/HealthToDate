@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthToDate.Com</title>
+    <script src="https://kit.fontawesome.com/04ec824536.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">HealthToDate</div>
+        <label for="" class="menu-btn" id="menu">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul id="chng">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Cancer">Cancer</a></li>
+            <li><a href="/Heart">Heart</a></li>
+            <li><a href="/Diabetes">Diabetes</a></li>
+            <!-- <li><a href="#"></a></li> -->
+        </ul>
+    </nav>
+
+    <div class="body cont1">
+        <div class="text">
+            <h1>
+                Give Your Body Healthy Test <br />
+                Predict Disease!
+            </h1>
+            <p>
+                For the VIT Hackclub Educates 2.0 hackathon A Data Science project <br />
+                with a HealthCare Subdomain with ML technology
+            </p>
+            <a href="/Cancer" class="btn">Start Predicting</a>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/Doctor.png')}}" alt="no" />
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="../static/js/ham.js"></script>
+</body>
+
+</html>
